@@ -1,0 +1,114 @@
+body {
+  background: grey;
+}
+
+.app {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--light-color);
+}
+header{
+  background-color: #304156;
+  margin-bottom: 20px;
+}
+h1, h2{
+  color: #FBFBFB;
+  padding-bottom: 20px;
+}
+h2{
+  text-decoration: underline;
+}
+.app form {
+  background-color: #304156;
+  height: 50vh;
+  gap: 10px;
+  width: 50%;
+  box-shadow: 0 3px 6px 2px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.app form input [type="text"] {
+  box-shadow: 0 2px 4px 0;
+  height: 5vh;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: none;
+}
+
+label{
+  text-align: left;
+}
+.error-span{
+  color: red;
+  text-align: left;
+}
+.app form [type="Reset"] {
+  height: 7vh;
+  padding: 25px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: none;
+}
+
+.app form input [type="submit"]{
+  height: 7vh;
+  padding: 25px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: none;
+}
+
+.app form input:focus {
+  border: none;
+  outline: 2px solid #eb98aeb1;
+}
+
+.app form input[type="text"] {
+  padding: 6px 13px;
+}
+
+.app ul li {
+  list-style: none;
+  text-shadow: none;
+  text-transform: capitalize;
+  white-space: pre;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.button-container{
+  margin-top: 20px;
+}
+
+.created-pokemon {
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.ul-class {
+  margin-bottom: 10px;
+  border: 3px solid #304156;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #304156;
+  color: var(--light-color);
+  position: relative;
+}
+.card-number{
+  text-decoration: solid;
+}
+.escape-button{
+  position:absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  color: white;
+  padding: 4px;
+  }
