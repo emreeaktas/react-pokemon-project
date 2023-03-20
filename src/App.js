@@ -39,7 +39,7 @@ function App() {
           name: pokemonName,
           type: pokemonType,
           power: pokemonPower,
-        }
+        },
       ]);
       setName("");
       setType("");
@@ -99,13 +99,13 @@ function App() {
         )}
         <div className="button-container d-flex justify-content-center align-items-center">
           <input
-            className="btn btn-submit"
+            className="btn-submit"
             type="submit"
             value="Submit"
             onClick={handleCreatePokemon}
           />
           <input
-            className="btn btn-reset"
+            className="btn-reset"
             type="reset"
             value="Reset"
             onClick={handleClear}
@@ -113,11 +113,14 @@ function App() {
         </div>
       </form>
 
-      {entries.length !== 0 && (
-        <div className="created-pokemon d-flex flex-wrap justify-content-start">
-          {entries.map((entry, index) => (
-            <ul key={entry.id} className="ul-class">
-              <h2 className="card-number">{`id #${entry.id}`}</h2>
+      {entries.length !== 0 &&
+        entries.map((entry) => (
+          <div
+            key={entry.id}
+            className="created-pokemon d-flex flex-wrap justify-content-start"
+          >
+            <ul className="ul-class">
+              <h2 className="card-number">id #{entry.id}</h2>
               <li>
                 {`Your Pokemon Name: ${entry.name} \n Your Pokemon Type: ${entry.type} \n Your Pokemon Power: ${entry.power}`}
               </li>
@@ -128,9 +131,8 @@ function App() {
                 X
               </button>
             </ul>
-          ))}
-        </div>
-      )}
+          </div>
+        ))}
     </div>
   );
 }

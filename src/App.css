@@ -31,7 +31,8 @@ h2{
   margin-bottom: 20px;
 }
 
-.app form input [type="text"] {
+.app form input [type="text"]{
+
   box-shadow: 0 2px 4px 0;
   height: 5vh;
   padding: 5px 10px;
@@ -39,7 +40,14 @@ h2{
   font-weight: 700;
   border: none;
 }
-
+.app form input [type="number"]{
+  box-shadow: 0 2px 4px 0;
+  height: 5vh;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: none;
+}
 label{
   text-align: left;
 }
@@ -47,17 +55,22 @@ label{
   color: red;
   text-align: left;
 }
-.app form [type="Reset"] {
+
+.button-container{
+  margin-top: 20px;
+}
+
+.btn-submit{
   height: 7vh;
-  padding: 25px;
+  padding: 10px;
   border-radius: 10px;
   font-weight: 700;
   border: none;
 }
 
-.app form input [type="submit"]{
+.btn-reset {
   height: 7vh;
-  padding: 25px;
+  padding: 10px;
   border-radius: 10px;
   font-weight: 700;
   border: none;
@@ -66,10 +79,6 @@ label{
 .app form input:focus {
   border: none;
   outline: 2px solid #eb98aeb1;
-}
-
-.app form input[type="text"] {
-  padding: 6px 13px;
 }
 
 .app ul li {
@@ -83,9 +92,7 @@ label{
   opacity: 0.8;
 }
 
-.button-container{
-  margin-top: 20px;
-}
+
 
 .created-pokemon {
   gap: 20px;
