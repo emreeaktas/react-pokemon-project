@@ -13,13 +13,6 @@
   --light-color: #fff;
 }
 
-.btn {
-  margin: auto;
-  border: none;
-  font-weight: 700;
-  border-radius: 5px;
-  cursor: pointer;
-}
 .d-flex {
   display: flex;
 }

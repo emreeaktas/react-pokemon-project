@@ -58,46 +58,52 @@ function App() {
         <h2>Create a Pokemon:</h2>
       </header>
       <form className="d-flex flex-column">
-        <label>Pokemon Name: </label>
-        <input
-          type="text"
-          placeholder="Enter a Pokemon Name"
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
-          value={pokemonName}
-        />
-        {nameError && (
-          <span className="error-span">Please fill the field! </span>
-        )}
-        <label>Pokemon Type: </label>
-        <input
-          type="text"
-          onChange={(e) => {
-            setType(e.target.value);
-          }}
-          placeholder="Enter a Pokemon Type"
-          value={pokemonType}
-        />
-        {typeError && (
-          <span className="error-span">Please fill the field! </span>
-        )}
-        <label>Pokemon Power: </label>
-        <input
-          type="number"
-          placeholder="Enter Pokemon Power"
-          onChange={(e) => {
-            const value = e.target.value;
-            if (value === "" || (value >= 1 && value <= 1000)) {
-              setPower(value);
-            }
-          }}
-          value={pokemonPower}
-        />
-        {powerError && (
-          <span className="error-span">Please fill the field! </span>
-        )}
-        <div className="button-container d-flex justify-content-center align-items-center">
+        <div className="input-container">
+          <label>Pokemon Name: </label>
+          <input
+            type="text"
+            placeholder="Enter a Pokemon Name"
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+            value={pokemonName}
+          />
+          {nameError && (
+            <span className="error-span">Please fill the field! </span>
+          )}
+        </div>
+        <div className="input-container">
+          <label>Pokemon Type: </label>
+          <input
+            type="text"
+            onChange={(e) => {
+              setType(e.target.value);
+            }}
+            placeholder="Enter a Pokemon Type"
+            value={pokemonType}
+          />
+          {typeError && (
+            <span className="error-span">Please fill the field! </span>
+          )}
+        </div>
+        <div className="input-container">
+          <label>Pokemon Power: </label>
+          <input
+            type="number"
+            placeholder="Enter Pokemon Power"
+            onChange={(e) => {
+              const value = e.target.value;
+              if (value === "" || (value >= 1 && value <= 1000)) {
+                setPower(value);
+              }
+            }}
+            value={pokemonPower}
+          />
+          {powerError && (
+            <span className="error-span">Please fill the field! </span>
+          )}
+        </div>
+        <div className="button-container d-flex justify-content-evenly">
           <input
             className="btn-submit"
             type="submit"

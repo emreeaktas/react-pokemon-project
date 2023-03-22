@@ -8,17 +8,23 @@ body {
   font-weight: 600;
   color: var(--light-color);
 }
-header{
+
+header {
   background-color: #304156;
   margin-bottom: 20px;
 }
-h1, h2{
+
+h1 {
   color: #FBFBFB;
   padding-bottom: 20px;
 }
-h2{
+
+h2 {
+  color: #FBFBFB;
+  padding-bottom: 20px;
   text-decoration: underline;
 }
+
 .app form {
   background-color: #304156;
   height: 50vh;
@@ -31,49 +37,44 @@ h2{
   margin-bottom: 20px;
 }
 
-.app form input [type="text"]{
 
+.app form input[type="text"] {
+  width: 70%;
   box-shadow: 0 2px 4px 0;
   height: 5vh;
   padding: 5px 10px;
   border-radius: 10px;
   font-weight: 700;
   border: none;
+  margin: auto;
 }
-.app form input [type="number"]{
+
+.app form input[type="number"] {
+  width: 70%;
   box-shadow: 0 2px 4px 0;
   height: 5vh;
   padding: 5px 10px;
   border-radius: 10px;
   font-weight: 700;
   border: none;
+  margin: auto;
 }
-label{
-  text-align: left;
-}
-.error-span{
+
+.error-span {
   color: red;
-  text-align: left;
 }
 
-.button-container{
+.button-container {
   margin-top: 20px;
 }
 
-.btn-submit{
-  height: 7vh;
-  padding: 10px;
-  border-radius: 10px;
-  font-weight: 700;
-  border: none;
-}
-
+.btn-submit,
 .btn-reset {
-  height: 7vh;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
   font-weight: 700;
   border: none;
+  cursor: pointer;
 }
 
 .app form input:focus {
@@ -92,8 +93,6 @@ label{
   opacity: 0.8;
 }
 
-
-
 .created-pokemon {
   gap: 20px;
   margin-top: 50px;
@@ -108,14 +107,16 @@ label{
   color: var(--light-color);
   position: relative;
 }
-.card-number{
+
+.card-number {
   text-decoration: solid;
 }
-.escape-button{
-  position:absolute;
+
+.escape-button {
+  position: absolute;
   top: 0;
   right: 0;
   background-color: red;
   color: white;
   padding: 4px;
-  }
+}
