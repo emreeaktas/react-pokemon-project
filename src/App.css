@@ -27,9 +27,11 @@ h2 {
 
 .app form {
   background-color: #304156;
-  height: 50vh;
-  gap: 10px;
-  width: 50%;
+  min-height: 50%;
+  max-height: 50%;
+  gap: 10%;
+  min-width: 50%;
+  max-width: 50%;
   box-shadow: 0 3px 6px 2px;
   margin: auto;
   padding: 20px;
@@ -37,6 +39,13 @@ h2 {
   margin-bottom: 20px;
 }
 
+.input-container {
+  margin: 1% 2% 0 2%;
+}
+
+.input-container label {
+  margin-top: 2%;
+}
 
 .app form input[type="text"] {
   width: 70%;
@@ -70,11 +79,12 @@ h2 {
 
 .btn-submit,
 .btn-reset {
-  padding: 1rem 2rem;
+  padding: 2% 4%;
   border-radius: 1rem;
   font-weight: 700;
   border: none;
   cursor: pointer;
+  max-width: 40%;
 }
 
 .app form input:focus {
@@ -93,15 +103,15 @@ h2 {
   opacity: 0.8;
 }
 
-.created-pokemon {
+.card-container {
   gap: 20px;
   margin-top: 50px;
 }
 
-.ul-class {
-  margin-bottom: 10px;
+.created-list {
+  margin-left: 1%;
   border: 3px solid #304156;
-  padding: 20px;
+  padding: 1%;
   border-radius: 10px;
   background-color: #304156;
   color: var(--light-color);

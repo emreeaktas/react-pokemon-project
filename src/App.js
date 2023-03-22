@@ -22,9 +22,9 @@ function App() {
     setPowerError("");
   };
   const handleClearPokemon = (pokemonId) => {
-    setEntries((previousEntries) => {
-      previousEntries.filter((entries) => entries.id !== pokemonId);
-    });
+    setEntries((previousEntries) =>
+      previousEntries.filter((entries) => entries.id !== pokemonId)
+    );
   };
   const handleCreatePokemon = (event) => {
     event.preventDefault();
@@ -58,8 +58,8 @@ function App() {
         <h2>Create a Pokemon:</h2>
       </header>
       <form className="d-flex flex-column">
-        <div className="input-container">
-          <label>Pokemon Name: </label>
+        <div className="input-container d-flex flex-column">
+          <label>Pokemon Name:</label>
           <input
             type="text"
             placeholder="Enter a Pokemon Name"
@@ -72,8 +72,8 @@ function App() {
             <span className="error-span">Please fill the field! </span>
           )}
         </div>
-        <div className="input-container">
-          <label>Pokemon Type: </label>
+        <div className="input-container d-flex flex-column">
+          <label>Pokemon Type:</label>
           <input
             type="text"
             onChange={(e) => {
@@ -86,8 +86,8 @@ function App() {
             <span className="error-span">Please fill the field! </span>
           )}
         </div>
-        <div className="input-container">
-          <label>Pokemon Power: </label>
+        <div className="input-container d-flex flex-column">
+          <label>Pokemon Power:</label>
           <input
             type="number"
             placeholder="Enter Pokemon Power"
@@ -118,14 +118,10 @@ function App() {
           />
         </div>
       </form>
-
-      {entries.length !== 0 &&
-        entries.map((entry) => (
-          <div
-            key={entry.id}
-            className="created-pokemon d-flex flex-wrap justify-content-start"
-          >
-            <ul className="ul-class">
+      <div className="card-container d-flex flex-wrap justify-content-start">
+        {entries.length !== 0 &&
+          entries.map((entry) => (
+            <ul className="created-list" key={entry.id}>
               <h2 className="card-number">id #{entry.id}</h2>
               <li>
                 {`Your Pokemon Name: ${entry.name} \n Your Pokemon Type: ${entry.type} \n Your Pokemon Power: ${entry.power}`}
@@ -137,8 +133,8 @@ function App() {
                 X
               </button>
             </ul>
-          </div>
-        ))}
+          ))}
+      </div>
     </div>
   );
 }
