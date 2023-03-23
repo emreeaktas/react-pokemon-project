@@ -41,13 +41,15 @@ h2 {
 
 .input-container {
   margin: 1% 2% 0 2%;
+  position: relative;
 }
 
 .input-container label {
   margin-top: 2%;
 }
 
-.app form input[type="text"] {
+.input-container input[type="text"],
+.input-container input[type="number"] {
   width: 70%;
   box-shadow: 0 2px 4px 0;
   height: 5vh;
@@ -56,25 +58,25 @@ h2 {
   font-weight: 700;
   border: none;
   margin: auto;
+  display: block;
+  /* added */
 }
 
-.app form input[type="number"] {
-  width: 70%;
-  box-shadow: 0 2px 4px 0;
-  height: 5vh;
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-weight: 700;
-  border: none;
-  margin: auto;
-}
-
-.error-span {
+.input-container span {
+  position: absolute;
+  bottom: -30%;
+  left: 15%;
+  display: block;
+  font-size: 18px;
   color: red;
+  width: 100%;
+  /* added */
+  text-align: left;
+  /* added */
 }
 
 .button-container {
-  margin-top: 20px;
+  margin-top: 4%;
 }
 
 .btn-submit,
