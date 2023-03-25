@@ -12,6 +12,7 @@ body {
 header {
   background-color: #304156;
   margin-bottom: 20px;
+  padding: 0 2%;
 }
 
 h1 {
@@ -22,7 +23,14 @@ h1 {
 h2 {
   color: #FBFBFB;
   padding-bottom: 20px;
-  text-decoration: underline;
+}
+
+header ul {
+  gap: 50px;
+}
+
+header a {
+  color: var(--light-color);
 }
 
 .app form {
@@ -77,6 +85,7 @@ h2 {
 
 .button-container {
   margin-top: 4%;
+  margin-bottom: 4%;
 }
 
 .btn-submit,

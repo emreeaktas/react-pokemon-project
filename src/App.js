@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import "./utilities.css";
+import { Header } from "./components/shared/header/Header";
 
 function App() {
   const [pokemonName, setName] = useState("");
@@ -53,11 +54,12 @@ function App() {
 
   return (
     <div className="app">
-      <header>
-        <h1>Welcome to Pokemon World!</h1>
-        <h2>Create a Pokemon:</h2>
-      </header>
+      <Header
+        logoTitle="Pokemon World"
+        navbarItems={["Profile", "Settings", "Logout"]}
+      />
       <form className="d-flex flex-column">
+        <h2>Create a Pokemon:</h2>
         <div className="input-container d-flex flex-column">
           <label>Pokemon Name:</label>
           <input
