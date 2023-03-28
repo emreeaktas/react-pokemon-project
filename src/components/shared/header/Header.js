@@ -1,12 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export const Header = ({ logoTitle, navbarItems }) => {
+const Header = ({ logoTitle, navbarItems }) => {
   return (
     <header className="d-flex justify-content-between align-items-center">
       <h1>{logoTitle}</h1>
       <ul className="d-flex justify-content-between align-items-center">
-        {navbarItems.map((item) => (
-          <li>
+        {navbarItems.map((item, index) => (
+          <li key={index}>
             <a href="#item">{item}</a>
           </li>
         ))}
@@ -29,3 +30,13 @@ export const Header = ({ logoTitle, navbarItems }) => {
     </header>
   );
 };
+
+Header.defaultProps = {
+  logoTitle: "Logo Title",
+  navbarItems: ["Button 1", "Button 2", "Button 3"],
+};
+Header.propTypes = {
+  logoTitle: PropTypes.string,
+  navbarItems: PropTypes.array.isRequired,
+};
+export default Header;
