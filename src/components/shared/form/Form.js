@@ -16,7 +16,10 @@ const Form = ({
           type="text"
           placeholder="Enter a Pokemon Name"
           onChange={(event) =>
-            setPokemon({ ...pokemon, pokemonName: event.target.value })
+            setPokemon((prevPokemon) => ({
+              ...prevPokemon,
+              pokemonName: event.target.value,
+            }))
           }
           value={pokemon.pokemonName}
         />
