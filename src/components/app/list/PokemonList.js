@@ -1,7 +1,7 @@
 import React from "react";
-import PokemonCard from "./PokemonCard";
+import PokemonCard from "../card/PokemonCard";
 
-const PokemonList = ({ entries, handleClearPokemon }) => {
+const PokemonList = ({ entries, handleDeletePokemon }) => {
   return (
     <div className="card-container d-flex flex-wrap justify-content-start">
       {entries.length !== 0 &&
@@ -9,7 +9,7 @@ const PokemonList = ({ entries, handleClearPokemon }) => {
           <PokemonCard
             key={entry.id}
             entry={entry}
-            handleClearPokemon={handleClearPokemon}
+            handleDeletePokemon={handleDeletePokemon}
           />
         ))}
     </div>

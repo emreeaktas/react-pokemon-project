@@ -18,12 +18,12 @@ const Form = ({
           onChange={(event) =>
             setPokemon((prevPokemon) => ({
               ...prevPokemon,
-              pokemonName: event.target.value,
+              name: event.target.value,
             }))
           }
-          value={pokemon.pokemonName}
+          value={pokemon.name}
         />
-        {!error.nameError && (
+        {!error.name && (
           <span className="error-span">Please fill this field!</span>
         )}
       </div>
@@ -33,11 +33,11 @@ const Form = ({
           type="text"
           placeholder="Enter a Pokemon Type"
           onChange={(event) =>
-            setPokemon({ ...pokemon, pokemonType: event.target.value })
+            setPokemon({ ...pokemon, type: event.target.value })
           }
-          value={pokemon.pokemonType}
+          value={pokemon.type}
         />
-        {!error.typeError && (
+        {!error.type && (
           <span className="error-span">Please fill this field!</span>
         )}
       </div>
@@ -47,11 +47,11 @@ const Form = ({
           type="number"
           placeholder="Enter Pokemon Power"
           onChange={(event) =>
-            setPokemon({ ...pokemon, pokemonPower: event.target.value })
+            setPokemon({ ...pokemon, power: event.target.value })
           }
-          value={pokemon.pokemonPower}
+          value={pokemon.power}
         />
-        {!error.powerError && (
+        {!error.power && (
           <span className="error-span">Please fill this field!</span>
         )}
       </div>

@@ -1,15 +1,15 @@
 import React from "react";
 
-const PokemonCard = ({ entry, handleClearPokemon }) => {
+const PokemonCard = ({ entry, handleDeletePokemon }) => {
   return (
     <ul className="created-list">
       <h2 className="card-number">id #{entry.id}</h2>
       <li>
-        {`Your Pokemon Name: ${entry.pokemonName} \n Your Pokemon Type: ${entry.pokemonType} \n Your Pokemon Power: ${entry.pokemonPower}`}
+        {`Your Pokemon Name: ${entry.name} \n Your Pokemon Type: ${entry.type} \n Your Pokemon Power: ${entry.power}`}
       </li>
       <button
         className="escape-button btn"
-        onClick={() => handleClearPokemon(entry.id)}
+        onClick={() => handleDeletePokemon(entry.id)}
       >
         X
       </button>

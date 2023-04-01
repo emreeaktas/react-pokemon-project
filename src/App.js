@@ -1,31 +1,31 @@
 import "./App.css";
 import "./utilities.css";
 import Header from "./components/shared/header/Header";
-import Form from "./components/shared/form/Form";
-import PokemonList from "./components/shared/cards/PokemonList";
+import Form from "./components/app/form/Form";
+import PokemonList from "./components/app/list/PokemonList";
 import { useState } from "react";
 
 //useRef kullanmak daha iyi olabilir.
 
 function App() {
   const [pokemon, setPokemon] = useState({
-    pokemonName: "",
-    pokemonType: "",
-    pokemonPower: "",
+    name: "",
+    type: "",
+    power: "",
   });
 
   const [error, setError] = useState({
-    nameError: true,
-    typeError: true,
-    powerError: true,
+    name: true,
+    type: true,
+    power: true,
   });
 
   const [entries, setEntries] = useState([]);
 
   const handleClear = () => {
-    setPokemon({ pokemonName: "", pokemonType: "", pokemonPower: "" });
+    setPokemon({ name: "", type: "", power: "" });
     setEntries([]);
-    setError({ nameError: false, typeError: false, powerError: false });
+    setError({ name: true, type: true, power: true });
   };
 
   const handleCreatePokemon = (event) => {
@@ -36,11 +36,11 @@ function App() {
         ...entries,
         { id: `${Date.now()}${Math.floor(Math.random() * 1000)}`, ...pokemon },
       ]);
-      setPokemon({ pokemonName: "", pokemonType: "", pokemonPower: "" });
+      setPokemon({ name: "", type: "", power: "" });
     }
   };
 
-  const handleClearPokemon = (pokemonId) => {
+  const handleDeletePokemon = (pokemonId) => {
     setEntries((previousEntries) =>
       previousEntries.filter((entries) => entries.id !== pokemonId)
     );
@@ -59,7 +59,10 @@ function App() {
         error={error}
         handleClear={handleClear}
       />
-      <PokemonList entries={entries} handleClearPokemon={handleClearPokemon} />
+      <PokemonList
+        entries={entries}
+        handleDeletePokemon={handleDeletePokemon}
+      />
     </div>
   );
 }
