@@ -1,8 +1,8 @@
 import "./App.css";
 import "./utilities.css";
 import Header from "./components/shared/header/Header";
-import Form from "./components/app/form/Form";
-import PokemonList from "./components/app/list/PokemonList";
+import Form from "./components/app/pokemon-form/PokemonForm";
+import PokemonList from "./components/app/pokemon-list/PokemonList";
 import { useState } from "react";
 
 //useRef kullanmak daha iyi olabilir.
