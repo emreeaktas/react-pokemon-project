@@ -1,0 +1,28 @@
+{
+  "pokemonlist" : [
+    {
+        "id": "0001",
+        "name": "Okan Akkurt",
+        "type": "Frontend Dev",
+        "power": 15
+      },
+      {
+        "id": "0002",
+        "name": "Eralp Nitelik",
+        "type": "Java Boost",
+        "power": 16
+      },
+      {
+        "id": "0003",
+        "name": "Firat Can Tas",
+        "type": ".Net Boost",
+        "power": 17
+      },
+      {
+        "id": "0004",
+        "name": "Onurcan Pozan",
+        "type": "React Native",
+        "power": 18
+      }
+    ]
+}

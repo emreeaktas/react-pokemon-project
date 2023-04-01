@@ -2,7 +2,7 @@ import React from "react";
 
 const PokemonForm = ({
   pokemon,
-  setPokemon,
+  updatePokemonInput,
   handleCreatePokemon,
   error,
   handleClear,
@@ -15,12 +15,7 @@ const PokemonForm = ({
         <input
           type="text"
           placeholder="Enter a Pokemon Name"
-          onChange={(event) =>
-            setPokemon((prevPokemon) => ({
-              ...prevPokemon,
-              name: event.target.value,
-            }))
-          }
+          onChange={(event) => updatePokemonInput({ name: event.target.value })}
           value={pokemon.name}
         />
         {!error.name && (
@@ -32,9 +27,7 @@ const PokemonForm = ({
         <input
           type="text"
           placeholder="Enter a Pokemon Type"
-          onChange={(event) =>
-            setPokemon({ ...pokemon, type: event.target.value })
-          }
+          onChange={(event) => updatePokemonInput({ type: event.target.value })}
           value={pokemon.type}
         />
         {!error.type && (
@@ -47,7 +40,7 @@ const PokemonForm = ({
           type="number"
           placeholder="Enter Pokemon Power"
           onChange={(event) =>
-            setPokemon({ ...pokemon, power: event.target.value })
+            updatePokemonInput({ power: event.target.value })
           }
           value={pokemon.power}
         />

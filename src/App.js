@@ -4,6 +4,7 @@ import Header from "./components/shared/header/Header";
 import Form from "./components/app/pokemon-form/PokemonForm";
 import PokemonList from "./components/app/pokemon-list/PokemonList";
 import { useState } from "react";
+import axios from "axios";
 
 //useRef kullanmak daha iyi olabilir.
 
@@ -20,7 +21,36 @@ function App() {
     power: true,
   });
 
-  const [entries, setEntries] = useState([]);
+  axios("http://localhost:5000/pokemonlist").then((res) =>
+    console.log(res.data)
+  );
+
+  const [entries, setEntries] = useState([
+    {
+      id: "0001",
+      name: "Okan Akkurt",
+      type: "Frontend Dev",
+      power: 15,
+    },
+    {
+      id: "0002",
+      name: "Eralp Nitelik",
+      type: "Java Boost",
+      power: 16,
+    },
+    {
+      id: "0003",
+      name: "Firat Can Tas",
+      type: ".Net Boost",
+      power: 17,
+    },
+    {
+      id: "0004",
+      name: "Onurcan Pozan",
+      type: "React Native",
+      power: 18,
+    },
+  ]);
 
   const handleClear = () => {
     setPokemon({ name: "", type: "", power: "" });
@@ -32,10 +62,7 @@ function App() {
     event.preventDefault();
     setError({ ...pokemon });
     if (!Object.values(pokemon).some((value) => !value)) {
-      setEntries([
-        ...entries,
-        { id: `${Date.now()}${Math.floor(Math.random() * 1000)}`, ...pokemon },
-      ]);
+      setEntries([...entries, { id: crypto.randomUUID, ...pokemon }]);
       setPokemon({ name: "", type: "", power: "" });
     }
   };
@@ -46,6 +73,10 @@ function App() {
     );
   };
 
+  const updatePokemonInput = (pokemonInput) => {
+    setPokemon((prevPokemon) => ({ ...prevPokemon, ...pokemonInput }));
+  };
+
   return (
     <div className="app">
       <Header
@@ -54,7 +85,7 @@ function App() {
       />
       <Form
         pokemon={pokemon}
-        setPokemon={setPokemon}
+        updatePokemonInput={updatePokemonInput}
         handleCreatePokemon={handleCreatePokemon}
         error={error}
         handleClear={handleClear}
