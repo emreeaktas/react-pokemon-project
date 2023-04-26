@@ -2,26 +2,26 @@
   "pokemonlist" : [
     {
         "id": "0001",
-        "name": "Okan Akkurt",
-        "type": "Frontend Dev",
+        "name": "Pikachu",
+        "type": "Electric",
         "power": 15
       },
       {
         "id": "0002",
-        "name": "Eralp Nitelik",
-        "type": "Java Boost",
+        "name": "Charmender",
+        "type": "Fire",
         "power": 16
       },
       {
         "id": "0003",
-        "name": "Firat Can Tas",
-        "type": ".Net Boost",
+        "name": "Squirtle",
+        "type": "Water",
         "power": 17
       },
       {
         "id": "0004",
-        "name": "Onurcan Pozan",
-        "type": "React Native",
+        "name": "Bulbasaur",
+        "type": "Grass",
         "power": 18
       }
     ]

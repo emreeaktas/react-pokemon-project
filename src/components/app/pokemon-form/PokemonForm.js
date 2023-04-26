@@ -1,12 +1,36 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { PokemonContext } from "../../../context/pokemon-context/PokemonContext";
 
-const PokemonForm = ({
-  pokemon,
-  updatePokemonInput,
-  handleCreatePokemon,
-  error,
-  handleClear,
-}) => {
+const PokemonForm = ({ children }) => {
+  const { createPokemon } = useContext(PokemonContext);
+  const [pokemon, setPokemon] = useState({
+    name: "",
+    type: "",
+    power: "",
+  });
+
+  const [error, setError] = useState({
+    name: true,
+    type: true,
+    power: true,
+  });
+  const handleClear = () => {
+    setPokemon({ name: "", type: "", power: "" });
+    setEntries([]);
+    setError({ name: true, type: true, power: true });
+  };
+  const updatePokemonInput = (pokemonProp) => {
+    setPokemon((prevPokemon) => ({ ...prevPokemon, ...pokemonProp }));
+  };
+
+  const addPokemon = (event) => {
+    event.preventDefault();
+    setError({ ...pokemon });
+    if (!Object.values(pokemon).some((value) => !value)) {
+      createPokemon(pokemon);
+      setPokemon({ name: "", type: "", power: "" });
+    }
+  };
   return (
     <form className="d-flex flex-column">
       <h2>Create a Pokemon:</h2>
@@ -53,7 +77,7 @@ const PokemonForm = ({
           className="btn-submit"
           type="submit"
           value="Submit"
-          onClick={handleCreatePokemon}
+          onClick={addPokemon}
         />
         <input
           className="btn-reset"
@@ -62,6 +86,7 @@ const PokemonForm = ({
           onClick={handleClear}
         />
       </div>
+      {children}
     </form>
   );
 };

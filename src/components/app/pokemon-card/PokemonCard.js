@@ -1,11 +1,12 @@
-import React from "react";
+import { useContext } from "react";
 
-const PokemonCard = ({ entry, handleDeletePokemon }) => {
+const PokemonCard = ({ pokemon }) => {
+  const { handleDeletePokemon: deletePokemon } = useContext(PokemonContext);
   return (
     <ul className="created-list">
-      <h2 className="card-number">id #{entry.id}</h2>
+      <h2 className="card-number">Pokemon {entry.id}</h2>
       <li>
-        {`Your Pokemon Name: ${entry.name} \n Your Pokemon Type: ${entry.type} \n Your Pokemon Power: ${entry.power}`}
+        {`Name: ${entry.name} \n Type: ${entry.type} \n Power: ${entry.power}`}
       </li>
       <button
         className="escape-button btn"
