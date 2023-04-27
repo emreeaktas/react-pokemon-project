@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { PokemonContext } from "../../../context/pokemon-context/PokemonContext";
 
-const PokemonForm = ({ children }) => {
-  const { createPokemon } = useContext(PokemonContext);
+const PokemonForm = () => {
+  const { createPokemon, setEntries } = useContext(PokemonContext);
   const [pokemon, setPokemon] = useState({
     name: "",
     type: "",
@@ -86,7 +86,6 @@ const PokemonForm = ({ children }) => {
           onClick={handleClear}
         />
       </div>
-      {children}
     </form>
   );
 };
